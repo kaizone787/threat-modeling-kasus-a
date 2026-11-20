@@ -1,8 +1,8 @@
-# Threat Modeling STRIDE — Studi Kasus A: Sistem Presensi Perkuliahan Berbasis QR Code
+# Threat Modeling STRIDE — Kasus A (Kelompok 10)
 
-Repositori ini berisi model *threat modeling* berbasis **STRIDE** menggunakan **OWASP Threat Dragon** untuk mata kuliah **Keamanan Siber (CAK3CAB3)** — Studi Kasus A (*Sistem Presensi Perkuliahan Berbasis QR Code*).
+Repositori ini berisi model *threat modeling* berbasis **STRIDE** menggunakan **OWASP Threat Dragon** untuk mata kuliah **Keamanan Siber (CAK3CAB3)** — **Kelompok 10**, Studi Kasus A (*Sistem Presensi Perkuliahan Berbasis QR Code*), dosen pengampu **Kharisma Monika Dian Pertiwi**.
 
-## Anggota Kelompok
+## Anggota Kelompok 10
 
 | Peran | Nama | NIM | Fokus Utama |
 | :--- | :--- | :--- | :--- |
@@ -12,7 +12,7 @@ Repositori ini berisi model *threat modeling* berbasis **STRIDE** menggunakan **
 
 ## Struktur Repositori
 
-- `ThreatDragonModels/STRIDE - Kasus A - Sistem Presensi QR Code/STRIDE - Kasus A - Sistem Presensi QR Code.json` — File model OWASP Threat Dragon v2 (7 elemen DFD, 3 zona *trust boundary*, 13 *data flow*, dan 8 ancaman STRIDE).
+- `ThreatDragonModels/STRIDE - Kasus A - Kelompok 10/STRIDE - Kasus A - Kelompok 10.json` — File model OWASP Threat Dragon v2 (7 elemen DFD, 3 zona *trust boundary*, 13 *data flow*, dan 8 ancaman STRIDE).
 - `docs/Pembagian_Tugas_Kasus_A_Final.docx` — Dokumen pembagian tugas kelompok, panduan langkah pengerjaan, standar STRIDE, dan *checklist* QA.
 
 ## Ringkasan 8 Ancaman STRIDE
@@ -32,6 +32,6 @@ Repositori ini berisi model *threat modeling* berbasis **STRIDE** menggunakan **
 
 1. Buka [https://www.threatdragon.com/](https://www.threatdragon.com/) dan pilih **Login to GitHub**.
 2. Pilih repositori `kaizone787/threat-modeling-kasus-a` dan branch `main`.
-3. Buka model **`STRIDE - Kasus A - Sistem Presensi QR Code`**.
+3. Buka model **`STRIDE - Kasus A - Kelompok 10`**.
 4. Setiap perubahan yang disimpan lewat tombol **Save** akan otomatis ter-*commit* ke repositori ini.
 5. Untuk mengekspor laporan PDF, buka menu **Report**, aktifkan seluruh opsi laporan, lalu pilih **Print → Save as PDF**.

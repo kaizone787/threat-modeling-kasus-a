@@ -1,7 +1,7 @@
 {
   "version": "2.6.2",
   "summary": {
-    "title": "STRIDE - Kasus A - Sistem Presensi QR Code",
+    "title": "STRIDE - Kasus A - Kelompok 10",
     "owner": "Muhammad Chaesar Pratama (103072400119)",
     "description": "Studi Kasus A: Sistem Presensi Perkuliahan Berbasis QR Code (Keamanan Siber CAK3CAB3).\n\nAlur Bisnis Utama:\nDosen pengampu membuka sesi presensi untuk kelas yang diampunya melalui aplikasi web sehingga sistem menerbitkan kode QR yang ditampilkan di ruang kelas. Mahasiswa masuk menggunakan akun kampus lalu memindai kode QR, kemudian aplikasi mengirim identitas sesi dan informasi autentikasi ke Backend Presensi. Backend memvalidasi apakah sesi masih berada dalam masa berlaku lima menit, mahasiswa terdaftar di kelas tersebut, serta belum memiliki catatan hadir pada sesi yang sama sebelum menyimpannya ke Database Akademik. Dosen dapat memantau daftar hadir dan menutup sesi lebih awal, sementara admin akademik dapat melihat rekap kehadiran seluruh kelas melalui antarmuka web.\n\nAset Utama: Identitas pengguna, keanggotaan kelas, jadwal, sesi presensi, token/kode QR, dan catatan kehadiran.\nRuang Lingkup: Pembukaan/penutupan sesi, pemindaian QR, validasi kehadiran, dan pembacaan rekap.\nDi Luar Lingkup: Pendaftaran mata kuliah dan perubahan nilai.\n\nDaftar Asumsi Teknis:\n- Asumsi 1: Komunikasi antara Browser/Aplikasi Web dan layanan kampus berjalan melalui jaringan publik/kampus, sedangkan penggunaan enkripsi transport (TLS/HTTPS) serta pengamanan cookie/token belum dirinci.\n- Asumsi 2: Kode QR yang ditampilkan di ruang kelas bersifat statis selama jendela 5 menit dan tidak menyertakan verifikasi lokasi fisik ruang kelas.\n- Asumsi 3: Pencatatan audit log terstruktur untuk aksi pembukaan/penutupan sesi, validasi kehadiran, dan akses rekap belum dinyatakan tersedia.\n- Asumsi 4: Pembatasan laju permintaan (rate limiting) pada endpoint validasi presensi di Backend Presensi belum disebutkan dalam deskripsi sistem.",
     "id": 0
@@ -46,7 +46,7 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "5cd438d0-239e-4f8a-ac0b-b913f58aa56d",
+            "id": "5fda4973-30b4-4f22-88ae-d1067daa8848",
             "zIndex": -1,
             "data": {
               "type": "tm.BoundaryBox",
@@ -75,7 +75,7 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "0af0491c-78d7-4904-a1a8-fbaf37a415a9",
+            "id": "b75bfcc4-ed9c-40b3-b715-956ae1ca1a6a",
             "zIndex": -1,
             "data": {
               "type": "tm.BoundaryBox",
@@ -104,7 +104,7 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "793773a7-5383-4058-8d5f-4c18ed20062b",
+            "id": "a3c1e12b-fc59-497b-af7d-70953adac67d",
             "zIndex": -1,
             "data": {
               "type": "tm.BoundaryBox",
@@ -201,23 +201,23 @@
               "items": [
                 {
                   "group": "top",
-                  "id": "0a2b8d25-b18b-47dc-ad45-3f88e0d8b7e9"
+                  "id": "bc57981c-33fb-4248-9eb4-d1f3d51db216"
                 },
                 {
                   "group": "right",
-                  "id": "5e8fa0ab-b454-43c0-917f-f0dd21011b33"
+                  "id": "60cde29a-edd7-407c-88b9-605707101fe6"
                 },
                 {
                   "group": "bottom",
-                  "id": "d2c2e5f2-7064-49f7-a4fb-d84258264862"
+                  "id": "1f814eff-f355-4355-8ba5-1a07628f0d2c"
                 },
                 {
                   "group": "left",
-                  "id": "2b7deec6-6429-448c-b408-904bfc5855f3"
+                  "id": "07949fb1-44bb-4fee-bd42-0a3d3d9fef4f"
                 }
               ]
             },
-            "id": "e5be999b-2e04-4164-8c5f-f2f78b130271",
+            "id": "bce01919-758e-4dc6-97d1-e7859b15342d",
             "zIndex": 2,
             "data": {
               "type": "tm.Actor",
@@ -322,23 +322,23 @@
               "items": [
                 {
                   "group": "top",
-                  "id": "06395952-49b7-4870-8417-59505f62a932"
+                  "id": "25d73ae5-aa2f-4c01-84c2-f4f96f7bb1ff"
                 },
                 {
                   "group": "right",
-                  "id": "c5570dd1-b387-434a-aacd-632b636f60e5"
+                  "id": "c365f9ba-959b-4723-bf66-eb2782e5584e"
                 },
                 {
                   "group": "bottom",
-                  "id": "f9204721-941f-4be6-81f5-db3e47c379f4"
+                  "id": "2f220bbf-a4e3-429a-85c1-4b6792c408cb"
                 },
                 {
                   "group": "left",
-                  "id": "6b5b0e9d-26d5-46c2-8fba-b392e9fa603d"
+                  "id": "93d9c3a4-3fbd-415c-8822-5e1034b635cf"
                 }
               ]
             },
-            "id": "bc554a54-4bb8-4f1f-a1bc-2430607e3cca",
+            "id": "717d018c-0391-438d-8da1-55cf536430d0",
             "zIndex": 2,
             "data": {
               "type": "tm.Actor",
@@ -351,7 +351,7 @@
               "providesAuthentication": false,
               "threats": [
                 {
-                  "id": "05ec26e5-b50e-4b27-b2b4-b1794b8f6dcb",
+                  "id": "a3ad1ff8-2c3d-4f0e-9aae-9abca26c7bbe",
                   "title": "Pemalsuan Kehadiran Melalui Pembagian Kode QR Sesi Aktif",
                   "status": "Open",
                   "severity": "High",
@@ -457,23 +457,23 @@
               "items": [
                 {
                   "group": "top",
-                  "id": "c4e0a325-9336-4346-8662-8c28fd8d3f28"
+                  "id": "1df20f1b-183b-4270-a4eb-004c91fe51cb"
                 },
                 {
                   "group": "right",
-                  "id": "3ab02dec-7ee4-4754-89c3-82e53bc77f71"
+                  "id": "3186472b-c9ff-46ff-8f64-48c54b7afe89"
                 },
                 {
                   "group": "bottom",
-                  "id": "d06595f0-8fb9-40e2-a496-5f28bc4c6b9e"
+                  "id": "8d92174f-92bd-4342-beb3-6677500dde17"
                 },
                 {
                   "group": "left",
-                  "id": "e25de81a-eccc-4791-ad10-eb9cdf79f827"
+                  "id": "a98fcc41-5a9d-4f9a-93ad-d523420c0378"
                 }
               ]
             },
-            "id": "ffb4b405-6d07-44a1-8efc-53ab91cf01ea",
+            "id": "771b8bff-153c-41b7-98f1-c3b69abeeaff",
             "zIndex": 2,
             "data": {
               "type": "tm.Actor",
@@ -578,23 +578,23 @@
               "items": [
                 {
                   "group": "top",
-                  "id": "5d71fab8-4dd9-4839-86c5-63959fefde5d"
+                  "id": "c13b7668-eef0-4087-b8b7-3a8504ecf7cf"
                 },
                 {
                   "group": "right",
-                  "id": "ce564ac4-1b7d-4b10-8d7e-2d4edd61fb2f"
+                  "id": "fc65ec5e-a0f7-45b3-a33a-2b2b7f58e7d7"
                 },
                 {
                   "group": "bottom",
-                  "id": "96034052-afe1-48b5-8922-8cf8b61c59ce"
+                  "id": "6417752f-eb13-46f0-a9e3-d561c78b0f10"
                 },
                 {
                   "group": "left",
-                  "id": "098f8e6d-7cf7-4361-a6fc-eea7f5c205c5"
+                  "id": "62992502-a263-4888-9c42-7f7d6e59610e"
                 }
               ]
             },
-            "id": "a785deb3-8b8e-4985-81e1-5301c979fcec",
+            "id": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
             "zIndex": 3,
             "data": {
               "type": "tm.Process",
@@ -706,23 +706,23 @@
               "items": [
                 {
                   "group": "top",
-                  "id": "a703529e-de76-4fca-b528-a025a0dbba3d"
+                  "id": "00c63b00-f667-4507-82ca-b0b19917531d"
                 },
                 {
                   "group": "right",
-                  "id": "f283a98e-0510-4b14-b1c3-512a92b780c1"
+                  "id": "8000c12d-39c3-45ef-923c-2c7f330b31cb"
                 },
                 {
                   "group": "bottom",
-                  "id": "34212b1e-38f6-48e9-876d-9f1c078b1032"
+                  "id": "3dfcd853-1a12-4775-b225-1404f61efbb4"
                 },
                 {
                   "group": "left",
-                  "id": "d84736fc-5d1a-4b23-95a9-7d26ae0731c1"
+                  "id": "c16bb81f-672e-4c6f-ac55-0891f83e6503"
                 }
               ]
             },
-            "id": "b173c61a-402c-40e2-9185-e4bf1e32143f",
+            "id": "13650144-480e-42de-91ca-a435a68fdb09",
             "zIndex": 3,
             "data": {
               "type": "tm.Process",
@@ -738,7 +738,7 @@
               "privilegeLevel": "",
               "threats": [
                 {
-                  "id": "4278cb96-77df-4430-9626-bb07f0484659",
+                  "id": "d116d354-820b-4f33-b2f4-7ae6747e9d69",
                   "title": "Penyamaran Akun Dosen Pengampu Melalui Pembajakan Token Sesi",
                   "status": "Open",
                   "severity": "High",
@@ -848,23 +848,23 @@
               "items": [
                 {
                   "group": "top",
-                  "id": "f6d782eb-f4d9-451b-bf19-b975eed5b85f"
+                  "id": "f1a5bd6b-7695-4dcf-9ec7-9862576b99a6"
                 },
                 {
                   "group": "right",
-                  "id": "846f9655-b56c-4775-ac70-08bc729ade36"
+                  "id": "48283105-17c8-42fa-802f-7dfca902d23c"
                 },
                 {
                   "group": "bottom",
-                  "id": "1c803ba2-9716-4990-b06a-a136f4a0c84d"
+                  "id": "e8bae19a-733f-4f86-b268-35b7d98a2be9"
                 },
                 {
                   "group": "left",
-                  "id": "17e41bbe-9c46-43c3-bb3c-acf0dbcfa11c"
+                  "id": "096e73ca-3818-4711-b6d0-3a38540b90c6"
                 }
               ]
             },
-            "id": "c882fbc1-5736-40c9-a4ac-6f891d672de0",
+            "id": "c136f22f-a537-4a6e-b547-6c1299ccf94e",
             "zIndex": 3,
             "data": {
               "type": "tm.Process",
@@ -880,7 +880,7 @@
               "privilegeLevel": "",
               "threats": [
                 {
-                  "id": "24269c35-0ea6-4ba8-9f72-29b4901e6e29",
+                  "id": "130759df-3ff2-429c-a922-4ee11a45f129",
                   "title": "Penyangkalan Penutupan Sesi dan Status Kehadiran Akibat Ketiadaan Audit Log",
                   "status": "Open",
                   "severity": "Medium",
@@ -893,7 +893,7 @@
                   "score": "4 (K:2 x D:2)"
                 },
                 {
-                  "id": "7d9fcb08-dd19-4357-93bf-1f6e75d00ea6",
+                  "id": "4204ca9d-2625-41fb-b803-3834178bda4b",
                   "title": "Pembanjiran Permintaan Validasi Presensi pada Jendela Waktu Sesi 5 Menit",
                   "status": "Open",
                   "severity": "High",
@@ -906,7 +906,7 @@
                   "score": "6 (K:2 x D:3)"
                 },
                 {
-                  "id": "f68bb748-0d95-45fe-958e-9f3573595e2c",
+                  "id": "04dc57ec-2ba1-4f59-82bc-4afe3e91c4ec",
                   "title": "Pengambilalihan Otorisasi Buka Sesi atau Rekap Seluruh Kelas (Broken Access Control)",
                   "status": "Open",
                   "severity": "High",
@@ -1021,23 +1021,23 @@
               "items": [
                 {
                   "group": "top",
-                  "id": "2567bd9b-3bbf-44fb-80f0-3444e5308d94"
+                  "id": "bd33a612-1570-4211-a6bd-8e37431e7100"
                 },
                 {
                   "group": "right",
-                  "id": "a776c3b5-d564-478a-b56e-5e48a9ba9397"
+                  "id": "c69ae40a-c6b2-4c26-96bb-64fc1f44edd5"
                 },
                 {
                   "group": "bottom",
-                  "id": "789e7b06-884b-4864-a843-2a678617fb1a"
+                  "id": "4d109c50-8b51-4bf9-94b7-c745dcb440ed"
                 },
                 {
                   "group": "left",
-                  "id": "514a6e7a-fb80-4e41-a08b-8efd6720cf2b"
+                  "id": "1ed252b0-b03a-4ac5-a0b1-eae5f160fbcc"
                 }
               ]
             },
-            "id": "fcf7884e-8cbd-43fc-984b-a90500fc37fe",
+            "id": "ef88236b-23f4-446b-8e68-0c3eb018a0a6",
             "zIndex": 3,
             "data": {
               "type": "tm.Store",
@@ -1053,7 +1053,7 @@
               "isSigned": false,
               "threats": [
                 {
-                  "id": "79a05fd8-0175-4086-b883-161ffdf137e5",
+                  "id": "3fe1fbed-7f33-474b-8357-7e12394cfa36",
                   "title": "Pembacaan Tidak Sah Data Akademik dan Riwayat Kehadiran pada Database Akademik",
                   "status": "Open",
                   "severity": "Medium",
@@ -1148,14 +1148,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "e05a788f-0dc9-4310-aad0-0f5bcc7d95be",
+            "id": "77603405-bcae-40df-84e8-d7e7b41ca7aa",
             "source": {
-              "cell": "e5be999b-2e04-4164-8c5f-f2f78b130271",
-              "port": "5e8fa0ab-b454-43c0-917f-f0dd21011b33"
+              "cell": "bce01919-758e-4dc6-97d1-e7859b15342d",
+              "port": "60cde29a-edd7-407c-88b9-605707101fe6"
             },
             "target": {
-              "cell": "a785deb3-8b8e-4985-81e1-5301c979fcec",
-              "port": "5d71fab8-4dd9-4839-86c5-63959fefde5d"
+              "cell": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
+              "port": "c13b7668-eef0-4087-b8b7-3a8504ecf7cf"
             },
             "vertices": [
               {
@@ -1238,14 +1238,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "8e243fb4-5f28-4605-b16b-143595402c17",
+            "id": "d9e1a112-eb78-4c4b-8288-a667a7aabe1c",
             "source": {
-              "cell": "a785deb3-8b8e-4985-81e1-5301c979fcec",
-              "port": "5d71fab8-4dd9-4839-86c5-63959fefde5d"
+              "cell": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
+              "port": "c13b7668-eef0-4087-b8b7-3a8504ecf7cf"
             },
             "target": {
-              "cell": "e5be999b-2e04-4164-8c5f-f2f78b130271",
-              "port": "d2c2e5f2-7064-49f7-a4fb-d84258264862"
+              "cell": "bce01919-758e-4dc6-97d1-e7859b15342d",
+              "port": "1f814eff-f355-4355-8ba5-1a07628f0d2c"
             },
             "vertices": [
               {
@@ -1328,14 +1328,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "1f831444-5ece-435e-910a-c084758b43ca",
+            "id": "cc37c10f-080e-4745-8205-1591c8f087e7",
             "source": {
-              "cell": "bc554a54-4bb8-4f1f-a1bc-2430607e3cca",
-              "port": "c5570dd1-b387-434a-aacd-632b636f60e5"
+              "cell": "717d018c-0391-438d-8da1-55cf536430d0",
+              "port": "c365f9ba-959b-4723-bf66-eb2782e5584e"
             },
             "target": {
-              "cell": "a785deb3-8b8e-4985-81e1-5301c979fcec",
-              "port": "098f8e6d-7cf7-4361-a6fc-eea7f5c205c5"
+              "cell": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
+              "port": "62992502-a263-4888-9c42-7f7d6e59610e"
             },
             "vertices": [
               {
@@ -1418,14 +1418,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "e75d8748-fedc-4a22-91d4-986c92181844",
+            "id": "669410dc-ac7c-4ec5-9941-aa50f6369ec4",
             "source": {
-              "cell": "a785deb3-8b8e-4985-81e1-5301c979fcec",
-              "port": "098f8e6d-7cf7-4361-a6fc-eea7f5c205c5"
+              "cell": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
+              "port": "62992502-a263-4888-9c42-7f7d6e59610e"
             },
             "target": {
-              "cell": "bc554a54-4bb8-4f1f-a1bc-2430607e3cca",
-              "port": "c5570dd1-b387-434a-aacd-632b636f60e5"
+              "cell": "717d018c-0391-438d-8da1-55cf536430d0",
+              "port": "c365f9ba-959b-4723-bf66-eb2782e5584e"
             },
             "vertices": [
               {
@@ -1508,14 +1508,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "3fed318a-bb25-4f74-929a-02cc65ddf9d5",
+            "id": "eab264cf-79a9-4b8c-96b2-05d313527efb",
             "source": {
-              "cell": "ffb4b405-6d07-44a1-8efc-53ab91cf01ea",
-              "port": "c4e0a325-9336-4346-8662-8c28fd8d3f28"
+              "cell": "771b8bff-153c-41b7-98f1-c3b69abeeaff",
+              "port": "1df20f1b-183b-4270-a4eb-004c91fe51cb"
             },
             "target": {
-              "cell": "a785deb3-8b8e-4985-81e1-5301c979fcec",
-              "port": "96034052-afe1-48b5-8922-8cf8b61c59ce"
+              "cell": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
+              "port": "6417752f-eb13-46f0-a9e3-d561c78b0f10"
             },
             "vertices": [
               {
@@ -1598,14 +1598,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "633ee2ce-d731-4383-9505-c2fe711e0891",
+            "id": "3ca6269b-a577-4f07-93fc-0eb598b8af2e",
             "source": {
-              "cell": "a785deb3-8b8e-4985-81e1-5301c979fcec",
-              "port": "96034052-afe1-48b5-8922-8cf8b61c59ce"
+              "cell": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
+              "port": "6417752f-eb13-46f0-a9e3-d561c78b0f10"
             },
             "target": {
-              "cell": "ffb4b405-6d07-44a1-8efc-53ab91cf01ea",
-              "port": "3ab02dec-7ee4-4754-89c3-82e53bc77f71"
+              "cell": "771b8bff-153c-41b7-98f1-c3b69abeeaff",
+              "port": "3186472b-c9ff-46ff-8f64-48c54b7afe89"
             },
             "vertices": [
               {
@@ -1688,14 +1688,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "735ad107-30f4-4074-82c5-67a761f0ecce",
+            "id": "a0fc45dd-8d48-40b1-978e-307f6872a054",
             "source": {
-              "cell": "a785deb3-8b8e-4985-81e1-5301c979fcec",
-              "port": "5d71fab8-4dd9-4839-86c5-63959fefde5d"
+              "cell": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
+              "port": "c13b7668-eef0-4087-b8b7-3a8504ecf7cf"
             },
             "target": {
-              "cell": "b173c61a-402c-40e2-9185-e4bf1e32143f",
-              "port": "d84736fc-5d1a-4b23-95a9-7d26ae0731c1"
+              "cell": "13650144-480e-42de-91ca-a435a68fdb09",
+              "port": "c16bb81f-672e-4c6f-ac55-0891f83e6503"
             },
             "vertices": [
               {
@@ -1778,14 +1778,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "f8cd4409-2764-458d-abdd-82d9ab7e71e6",
+            "id": "ce442720-51a2-456a-86dd-8557b176a5cd",
             "source": {
-              "cell": "b173c61a-402c-40e2-9185-e4bf1e32143f",
-              "port": "d84736fc-5d1a-4b23-95a9-7d26ae0731c1"
+              "cell": "13650144-480e-42de-91ca-a435a68fdb09",
+              "port": "c16bb81f-672e-4c6f-ac55-0891f83e6503"
             },
             "target": {
-              "cell": "a785deb3-8b8e-4985-81e1-5301c979fcec",
-              "port": "ce564ac4-1b7d-4b10-8d7e-2d4edd61fb2f"
+              "cell": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
+              "port": "fc65ec5e-a0f7-45b3-a33a-2b2b7f58e7d7"
             },
             "vertices": [
               {
@@ -1863,7 +1863,7 @@
               "protocol": "HTTP/HTTPS",
               "threats": [
                 {
-                  "id": "fd8b3cf6-bdc6-454c-86fc-c40672d09c7f",
+                  "id": "2d4f0506-a43e-45f4-8742-c4b6513baef5",
                   "title": "Manipulasi Parameter Identitas Sesi dan Token QR Saat Transit",
                   "status": "Open",
                   "severity": "Medium",
@@ -1882,14 +1882,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "232b38f7-1916-48a3-98a2-33f485c2e427",
+            "id": "2fe0cb40-04fb-4d7b-8700-ae7da31dbe06",
             "source": {
-              "cell": "a785deb3-8b8e-4985-81e1-5301c979fcec",
-              "port": "ce564ac4-1b7d-4b10-8d7e-2d4edd61fb2f"
+              "cell": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
+              "port": "fc65ec5e-a0f7-45b3-a33a-2b2b7f58e7d7"
             },
             "target": {
-              "cell": "c882fbc1-5736-40c9-a4ac-6f891d672de0",
-              "port": "17e41bbe-9c46-43c3-bb3c-acf0dbcfa11c"
+              "cell": "c136f22f-a537-4a6e-b547-6c1299ccf94e",
+              "port": "096e73ca-3818-4711-b6d0-3a38540b90c6"
             },
             "vertices": [
               {
@@ -1967,7 +1967,7 @@
               "protocol": "HTTP/HTTPS",
               "threats": [
                 {
-                  "id": "ebc2d699-9661-40b8-9e47-a278cbce8d28",
+                  "id": "23d9d1fd-f0f1-490b-a5b9-2ec168d93f5f",
                   "title": "Penyadapan Data Rekap Kehadiran dan Identitas Mahasiswa pada Jaringan Publik",
                   "status": "Open",
                   "severity": "High",
@@ -1986,14 +1986,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "7136afb9-a225-4c94-a5c8-b1d8319b1b28",
+            "id": "b1532c68-3a85-4a9e-a4f6-4bd8f331e179",
             "source": {
-              "cell": "c882fbc1-5736-40c9-a4ac-6f891d672de0",
-              "port": "17e41bbe-9c46-43c3-bb3c-acf0dbcfa11c"
+              "cell": "c136f22f-a537-4a6e-b547-6c1299ccf94e",
+              "port": "096e73ca-3818-4711-b6d0-3a38540b90c6"
             },
             "target": {
-              "cell": "a785deb3-8b8e-4985-81e1-5301c979fcec",
-              "port": "ce564ac4-1b7d-4b10-8d7e-2d4edd61fb2f"
+              "cell": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
+              "port": "fc65ec5e-a0f7-45b3-a33a-2b2b7f58e7d7"
             },
             "vertices": [
               {
@@ -2076,14 +2076,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "261de596-33a9-4781-9822-84a0670a67cb",
+            "id": "6fd29fe3-cf54-4bcf-898c-ab4a78efa412",
             "source": {
-              "cell": "c882fbc1-5736-40c9-a4ac-6f891d672de0",
-              "port": "f6d782eb-f4d9-451b-bf19-b975eed5b85f"
+              "cell": "c136f22f-a537-4a6e-b547-6c1299ccf94e",
+              "port": "f1a5bd6b-7695-4dcf-9ec7-9862576b99a6"
             },
             "target": {
-              "cell": "b173c61a-402c-40e2-9185-e4bf1e32143f",
-              "port": "34212b1e-38f6-48e9-876d-9f1c078b1032"
+              "cell": "13650144-480e-42de-91ca-a435a68fdb09",
+              "port": "3dfcd853-1a12-4775-b225-1404f61efbb4"
             },
             "vertices": []
           },
@@ -2161,14 +2161,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "673bd886-a1b8-42d9-853e-55ff1a90b615",
+            "id": "90d18aac-6c95-4077-80f2-06833332ca79",
             "source": {
-              "cell": "c882fbc1-5736-40c9-a4ac-6f891d672de0",
-              "port": "846f9655-b56c-4775-ac70-08bc729ade36"
+              "cell": "c136f22f-a537-4a6e-b547-6c1299ccf94e",
+              "port": "48283105-17c8-42fa-802f-7dfca902d23c"
             },
             "target": {
-              "cell": "fcf7884e-8cbd-43fc-984b-a90500fc37fe",
-              "port": "514a6e7a-fb80-4e41-a08b-8efd6720cf2b"
+              "cell": "ef88236b-23f4-446b-8e68-0c3eb018a0a6",
+              "port": "1ed252b0-b03a-4ac5-a0b1-eae5f160fbcc"
             },
             "vertices": [
               {
@@ -2251,14 +2251,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "5cdd1115-82c3-4a64-a60b-8a638423bc84",
+            "id": "7bd231c5-5104-472e-98bd-c3a3fe725c62",
             "source": {
-              "cell": "fcf7884e-8cbd-43fc-984b-a90500fc37fe",
-              "port": "514a6e7a-fb80-4e41-a08b-8efd6720cf2b"
+              "cell": "ef88236b-23f4-446b-8e68-0c3eb018a0a6",
+              "port": "1ed252b0-b03a-4ac5-a0b1-eae5f160fbcc"
             },
             "target": {
-              "cell": "c882fbc1-5736-40c9-a4ac-6f891d672de0",
-              "port": "846f9655-b56c-4775-ac70-08bc729ade36"
+              "cell": "c136f22f-a537-4a6e-b547-6c1299ccf94e",
+              "port": "48283105-17c8-42fa-802f-7dfca902d23c"
             },
             "vertices": [
               {
