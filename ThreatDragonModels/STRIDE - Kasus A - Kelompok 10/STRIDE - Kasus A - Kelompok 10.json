@@ -46,7 +46,7 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "5fda4973-30b4-4f22-88ae-d1067daa8848",
+            "id": "e6dfe995-db80-4598-ba52-bd16a02c263c",
             "zIndex": -1,
             "data": {
               "type": "tm.BoundaryBox",
@@ -75,7 +75,7 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "b75bfcc4-ed9c-40b3-b715-956ae1ca1a6a",
+            "id": "6fa9bf0f-990f-4e72-a061-2a9917d321b7",
             "zIndex": -1,
             "data": {
               "type": "tm.BoundaryBox",
@@ -104,7 +104,7 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "a3c1e12b-fc59-497b-af7d-70953adac67d",
+            "id": "66f93935-177d-4b4e-ac19-ed6213909410",
             "zIndex": -1,
             "data": {
               "type": "tm.BoundaryBox",
@@ -201,23 +201,23 @@
               "items": [
                 {
                   "group": "top",
-                  "id": "bc57981c-33fb-4248-9eb4-d1f3d51db216"
+                  "id": "c33b5fe1-5c87-4b07-82b6-bb9f00bee671"
                 },
                 {
                   "group": "right",
-                  "id": "60cde29a-edd7-407c-88b9-605707101fe6"
+                  "id": "a8bd6705-20e0-4d84-8f1c-d6d77c7a6e42"
                 },
                 {
                   "group": "bottom",
-                  "id": "1f814eff-f355-4355-8ba5-1a07628f0d2c"
+                  "id": "b8ff1b79-11ab-4263-9e1a-fa4b8b94b9f3"
                 },
                 {
                   "group": "left",
-                  "id": "07949fb1-44bb-4fee-bd42-0a3d3d9fef4f"
+                  "id": "e942eaa5-1427-4137-a1a5-065f23617c34"
                 }
               ]
             },
-            "id": "bce01919-758e-4dc6-97d1-e7859b15342d",
+            "id": "325c40fa-007e-45c1-bfda-ac93c3765e84",
             "zIndex": 2,
             "data": {
               "type": "tm.Actor",
@@ -322,23 +322,23 @@
               "items": [
                 {
                   "group": "top",
-                  "id": "25d73ae5-aa2f-4c01-84c2-f4f96f7bb1ff"
+                  "id": "6d9fa9c4-c08c-4254-9324-0073e20800a3"
                 },
                 {
                   "group": "right",
-                  "id": "c365f9ba-959b-4723-bf66-eb2782e5584e"
+                  "id": "f6d58cc3-dc3d-42d8-9c50-7b6c0760724f"
                 },
                 {
                   "group": "bottom",
-                  "id": "2f220bbf-a4e3-429a-85c1-4b6792c408cb"
+                  "id": "0c32c4fc-9adf-454b-85e0-89ec066c9be7"
                 },
                 {
                   "group": "left",
-                  "id": "93d9c3a4-3fbd-415c-8822-5e1034b635cf"
+                  "id": "fdb4ec6c-a715-496f-89b8-f62b795b878f"
                 }
               ]
             },
-            "id": "717d018c-0391-438d-8da1-55cf536430d0",
+            "id": "425f1304-f5f9-469a-beda-ebf82898a23a",
             "zIndex": 2,
             "data": {
               "type": "tm.Actor",
@@ -351,7 +351,7 @@
               "providesAuthentication": false,
               "threats": [
                 {
-                  "id": "a3ad1ff8-2c3d-4f0e-9aae-9abca26c7bbe",
+                  "id": "18dc4c2d-6150-4ea7-9f9d-015ad5531233",
                   "title": "Pemalsuan Kehadiran Melalui Pembagian Kode QR Sesi Aktif",
                   "status": "Open",
                   "severity": "High",
@@ -457,23 +457,23 @@
               "items": [
                 {
                   "group": "top",
-                  "id": "1df20f1b-183b-4270-a4eb-004c91fe51cb"
+                  "id": "0444d44b-eb66-4c8c-b1c4-b24ae2304688"
                 },
                 {
                   "group": "right",
-                  "id": "3186472b-c9ff-46ff-8f64-48c54b7afe89"
+                  "id": "75245f60-a2e1-459d-997e-f761d5d54e5b"
                 },
                 {
                   "group": "bottom",
-                  "id": "8d92174f-92bd-4342-beb3-6677500dde17"
+                  "id": "bcdb463c-6c94-4123-8ccd-0c75268d3ea9"
                 },
                 {
                   "group": "left",
-                  "id": "a98fcc41-5a9d-4f9a-93ad-d523420c0378"
+                  "id": "a7dbbd8f-1110-4413-a9a2-6dac474f2e29"
                 }
               ]
             },
-            "id": "771b8bff-153c-41b7-98f1-c3b69abeeaff",
+            "id": "39fd86ea-edd3-4d8c-904f-735f714a6d5c",
             "zIndex": 2,
             "data": {
               "type": "tm.Actor",
@@ -578,23 +578,23 @@
               "items": [
                 {
                   "group": "top",
-                  "id": "c13b7668-eef0-4087-b8b7-3a8504ecf7cf"
+                  "id": "d773c4c6-3dd2-4761-abe3-d4a309811804"
                 },
                 {
                   "group": "right",
-                  "id": "fc65ec5e-a0f7-45b3-a33a-2b2b7f58e7d7"
+                  "id": "e56687e1-3e2e-45e0-ba41-6f73ac05b4be"
                 },
                 {
                   "group": "bottom",
-                  "id": "6417752f-eb13-46f0-a9e3-d561c78b0f10"
+                  "id": "4670347e-2763-46f8-bc08-73625fd96ee5"
                 },
                 {
                   "group": "left",
-                  "id": "62992502-a263-4888-9c42-7f7d6e59610e"
+                  "id": "835ea0f3-00d6-479e-817e-f3b06000136e"
                 }
               ]
             },
-            "id": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
+            "id": "12cfdb2c-ac8e-4338-a7ac-f3139af0f0d8",
             "zIndex": 3,
             "data": {
               "type": "tm.Process",
@@ -706,23 +706,23 @@
               "items": [
                 {
                   "group": "top",
-                  "id": "00c63b00-f667-4507-82ca-b0b19917531d"
+                  "id": "996d7492-2250-423b-ba32-f1effd411630"
                 },
                 {
                   "group": "right",
-                  "id": "8000c12d-39c3-45ef-923c-2c7f330b31cb"
+                  "id": "a77a3abf-f0f1-41e8-9a99-c5fd5219dc96"
                 },
                 {
                   "group": "bottom",
-                  "id": "3dfcd853-1a12-4775-b225-1404f61efbb4"
+                  "id": "7820a0a8-76df-44e4-ad2f-35458ad91971"
                 },
                 {
                   "group": "left",
-                  "id": "c16bb81f-672e-4c6f-ac55-0891f83e6503"
+                  "id": "33788148-bca3-42c3-92e7-4b496de33d75"
                 }
               ]
             },
-            "id": "13650144-480e-42de-91ca-a435a68fdb09",
+            "id": "a29a236e-82ff-4e67-9e6d-183d89e2be04",
             "zIndex": 3,
             "data": {
               "type": "tm.Process",
@@ -738,7 +738,7 @@
               "privilegeLevel": "",
               "threats": [
                 {
-                  "id": "d116d354-820b-4f33-b2f4-7ae6747e9d69",
+                  "id": "aa38a7e5-cbe3-4c24-badb-2701599b5528",
                   "title": "Penyamaran Akun Dosen Pengampu Melalui Pembajakan Token Sesi",
                   "status": "Open",
                   "severity": "High",
@@ -749,6 +749,19 @@
                   "new": false,
                   "number": 2,
                   "score": "6 (K:2 x D:3)"
+                },
+                {
+                  "id": "b8948df3-e602-4b3c-9945-3ae321e4157d",
+                  "title": "Gangguan Layanan Login Melalui Percobaan Masuk Massal (Brute-Force / Credential Stuffing)",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Jika penyerang mengirimkan permintaan login otomatis secara massal dan terus-menerus ke Layanan Autentikasi Kampus pada jam pergantian kuliah, maka bisa terjadi penguncian akun sah atau perlambatan layanan autentikasi sehingga dosen gagal membuka sesi dan mahasiswa gagal masuk untuk memindai QR.\n\nAsumsi terkait (Asumsi 4): Belum dijelaskan adanya pembatasan laju permintaan (rate limiting) atau perlindungan anti-automasi adaptif pada endpoint autentikasi di Layanan Autentikasi Kampus.\n\nPenilaian Risiko: Kemungkinan = 2 (Sedang, percobaan login otomatis terhadap portal kampus masuk akal terjadi pada jaringan publik) x Dampak = 2 (Sedang, menghambat akses masuk sebagian pengguna saat jam kuliah) = Skor 4 (Sedang).",
+                  "mitigation": "Terapkan rate limiting per alamat IP dan penundaan progresif (exponential backoff) pada endpoint login, gunakan kebijakan lockout sementara yang terukur agar tidak mudah dimanfaatkan untuk mengunci akun massal, serta aktifkan proteksi anti-automasi adaptif dan pemantauan lonjakan kegagalan autentikasi. (Catatan: rekomendasi kontrol belum berarti telah diimplementasikan).",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": "4 (K:2 x D:2)"
                 }
               ],
               "threatFrequency": {
@@ -756,7 +769,7 @@
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 0,
+                "denialOfService": 1,
                 "elevationOfPrivilege": 0
               }
             }
@@ -848,23 +861,23 @@
               "items": [
                 {
                   "group": "top",
-                  "id": "f1a5bd6b-7695-4dcf-9ec7-9862576b99a6"
+                  "id": "9e62c4b0-bdb0-408c-a43c-b93960c3213d"
                 },
                 {
                   "group": "right",
-                  "id": "48283105-17c8-42fa-802f-7dfca902d23c"
+                  "id": "c7f3e86c-460b-4a51-91a8-d3589c6de06a"
                 },
                 {
                   "group": "bottom",
-                  "id": "e8bae19a-733f-4f86-b268-35b7d98a2be9"
+                  "id": "376613d4-468f-45cc-9e79-e744376f0256"
                 },
                 {
                   "group": "left",
-                  "id": "096e73ca-3818-4711-b6d0-3a38540b90c6"
+                  "id": "9047bc94-619a-4f69-948f-760cc54962c2"
                 }
               ]
             },
-            "id": "c136f22f-a537-4a6e-b547-6c1299ccf94e",
+            "id": "f029acec-eada-4a13-af9a-d01c38fc1ac4",
             "zIndex": 3,
             "data": {
               "type": "tm.Process",
@@ -880,7 +893,7 @@
               "privilegeLevel": "",
               "threats": [
                 {
-                  "id": "130759df-3ff2-429c-a922-4ee11a45f129",
+                  "id": "e73da05e-f5c5-49c1-8a0f-83d57ffa9e12",
                   "title": "Penyangkalan Penutupan Sesi dan Status Kehadiran Akibat Ketiadaan Audit Log",
                   "status": "Open",
                   "severity": "Medium",
@@ -893,7 +906,7 @@
                   "score": "4 (K:2 x D:2)"
                 },
                 {
-                  "id": "4204ca9d-2625-41fb-b803-3834178bda4b",
+                  "id": "d954e205-4a65-4855-bc6a-48f60904a573",
                   "title": "Pembanjiran Permintaan Validasi Presensi pada Jendela Waktu Sesi 5 Menit",
                   "status": "Open",
                   "severity": "High",
@@ -906,7 +919,7 @@
                   "score": "6 (K:2 x D:3)"
                 },
                 {
-                  "id": "04dc57ec-2ba1-4f59-82bc-4afe3e91c4ec",
+                  "id": "c95b4725-aac5-451c-9be7-f99c3897564a",
                   "title": "Pengambilalihan Otorisasi Buka Sesi atau Rekap Seluruh Kelas (Broken Access Control)",
                   "status": "Open",
                   "severity": "High",
@@ -1021,23 +1034,23 @@
               "items": [
                 {
                   "group": "top",
-                  "id": "bd33a612-1570-4211-a6bd-8e37431e7100"
+                  "id": "bcc7eed2-9e5e-4669-b26b-5dab76de3b7c"
                 },
                 {
                   "group": "right",
-                  "id": "c69ae40a-c6b2-4c26-96bb-64fc1f44edd5"
+                  "id": "7012e376-5b53-472c-af34-0c7264d9d349"
                 },
                 {
                   "group": "bottom",
-                  "id": "4d109c50-8b51-4bf9-94b7-c745dcb440ed"
+                  "id": "8942f5a0-59a5-44f1-b171-99d622e13311"
                 },
                 {
                   "group": "left",
-                  "id": "1ed252b0-b03a-4ac5-a0b1-eae5f160fbcc"
+                  "id": "7b465124-e4bb-462d-aabe-a15f851f5e82"
                 }
               ]
             },
-            "id": "ef88236b-23f4-446b-8e68-0c3eb018a0a6",
+            "id": "5c7e874e-ac4a-4579-a409-c1789387d539",
             "zIndex": 3,
             "data": {
               "type": "tm.Store",
@@ -1053,7 +1066,7 @@
               "isSigned": false,
               "threats": [
                 {
-                  "id": "3fe1fbed-7f33-474b-8357-7e12394cfa36",
+                  "id": "f56c0cb0-fd52-44a3-ad95-3cd87443e0f1",
                   "title": "Pembacaan Tidak Sah Data Akademik dan Riwayat Kehadiran pada Database Akademik",
                   "status": "Open",
                   "severity": "Medium",
@@ -1064,10 +1077,23 @@
                   "new": false,
                   "number": 6,
                   "score": "3 (K:1 x D:3)"
+                },
+                {
+                  "id": "aff521ad-5e0a-49af-86e5-25d5457e9803",
+                  "title": "Modifikasi Tidak Sah Catatan Kehadiran dan Status Sesi pada Database Akademik",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Jika pihak tidak berwenang yang berhasil mengakses jaringan internal atau menyalahgunakan akun basis data dapat mengubah atau menghapus catatan kehadiran secara langsung pada Database Akademik, maka bisa terjadi pemalsuan riwayat presensi mahasiswa serta hilangnya keabsahan rekap perkuliahan tanpa melalui proses validasi Backend Presensi.\n\nAsumsi terkait (Asumsi 3): Pembatasan hak tulis akun basis data (least privilege), kontrol integritas catatan kehadiran, serta audit log perubahan langsung pada tingkat database belum dinyatakan tersedia.\n\nPenilaian Risiko: Kemungkinan = 1 (Rendah, memerlukan akses jaringan internal atau kompromi akun database) x Dampak = 3 (Tinggi, merusak integritas seluruh data kehadiran akademik) = Skor 3 (Sedang).",
+                  "mitigation": "Terapkan akun basis data terpisah berprinsip least privilege (hanya izin INSERT/SELECT terbatas bagi layanan presensi tanpa izin UPDATE/DELETE bebas pada tabel riwayat kehadiran), aktifkan audit log tingkat database untuk setiap perubahan data, serta lakukan pencadangan berkala yang terlindungi integritasnya. (Catatan: rekomendasi kontrol belum berarti telah diimplementasikan).",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": "3 (K:1 x D:3)"
                 }
               ],
               "threatFrequency": {
-                "tampering": 0,
+                "tampering": 1,
                 "repudiation": 0,
                 "informationDisclosure": 1,
                 "denialOfService": 0
@@ -1148,14 +1174,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "77603405-bcae-40df-84e8-d7e7b41ca7aa",
+            "id": "b1c8eb09-5f1b-4101-a735-acf9f197d906",
             "source": {
-              "cell": "bce01919-758e-4dc6-97d1-e7859b15342d",
-              "port": "60cde29a-edd7-407c-88b9-605707101fe6"
+              "cell": "325c40fa-007e-45c1-bfda-ac93c3765e84",
+              "port": "a8bd6705-20e0-4d84-8f1c-d6d77c7a6e42"
             },
             "target": {
-              "cell": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
-              "port": "c13b7668-eef0-4087-b8b7-3a8504ecf7cf"
+              "cell": "12cfdb2c-ac8e-4338-a7ac-f3139af0f0d8",
+              "port": "d773c4c6-3dd2-4761-abe3-d4a309811804"
             },
             "vertices": [
               {
@@ -1238,14 +1264,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "d9e1a112-eb78-4c4b-8288-a667a7aabe1c",
+            "id": "e3b7809b-c6f0-4462-911f-5553e7dd9465",
             "source": {
-              "cell": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
-              "port": "c13b7668-eef0-4087-b8b7-3a8504ecf7cf"
+              "cell": "12cfdb2c-ac8e-4338-a7ac-f3139af0f0d8",
+              "port": "d773c4c6-3dd2-4761-abe3-d4a309811804"
             },
             "target": {
-              "cell": "bce01919-758e-4dc6-97d1-e7859b15342d",
-              "port": "1f814eff-f355-4355-8ba5-1a07628f0d2c"
+              "cell": "325c40fa-007e-45c1-bfda-ac93c3765e84",
+              "port": "b8ff1b79-11ab-4263-9e1a-fa4b8b94b9f3"
             },
             "vertices": [
               {
@@ -1328,14 +1354,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "cc37c10f-080e-4745-8205-1591c8f087e7",
+            "id": "a49679c9-bb35-468b-9767-e20efa2ef8fd",
             "source": {
-              "cell": "717d018c-0391-438d-8da1-55cf536430d0",
-              "port": "c365f9ba-959b-4723-bf66-eb2782e5584e"
+              "cell": "425f1304-f5f9-469a-beda-ebf82898a23a",
+              "port": "f6d58cc3-dc3d-42d8-9c50-7b6c0760724f"
             },
             "target": {
-              "cell": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
-              "port": "62992502-a263-4888-9c42-7f7d6e59610e"
+              "cell": "12cfdb2c-ac8e-4338-a7ac-f3139af0f0d8",
+              "port": "835ea0f3-00d6-479e-817e-f3b06000136e"
             },
             "vertices": [
               {
@@ -1418,14 +1444,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "669410dc-ac7c-4ec5-9941-aa50f6369ec4",
+            "id": "b63d9b3e-4e0e-4b24-93bb-5ac3da460df8",
             "source": {
-              "cell": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
-              "port": "62992502-a263-4888-9c42-7f7d6e59610e"
+              "cell": "12cfdb2c-ac8e-4338-a7ac-f3139af0f0d8",
+              "port": "835ea0f3-00d6-479e-817e-f3b06000136e"
             },
             "target": {
-              "cell": "717d018c-0391-438d-8da1-55cf536430d0",
-              "port": "c365f9ba-959b-4723-bf66-eb2782e5584e"
+              "cell": "425f1304-f5f9-469a-beda-ebf82898a23a",
+              "port": "f6d58cc3-dc3d-42d8-9c50-7b6c0760724f"
             },
             "vertices": [
               {
@@ -1508,14 +1534,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "eab264cf-79a9-4b8c-96b2-05d313527efb",
+            "id": "047df7ec-67cc-46ba-8411-0f781ed32e74",
             "source": {
-              "cell": "771b8bff-153c-41b7-98f1-c3b69abeeaff",
-              "port": "1df20f1b-183b-4270-a4eb-004c91fe51cb"
+              "cell": "39fd86ea-edd3-4d8c-904f-735f714a6d5c",
+              "port": "0444d44b-eb66-4c8c-b1c4-b24ae2304688"
             },
             "target": {
-              "cell": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
-              "port": "6417752f-eb13-46f0-a9e3-d561c78b0f10"
+              "cell": "12cfdb2c-ac8e-4338-a7ac-f3139af0f0d8",
+              "port": "4670347e-2763-46f8-bc08-73625fd96ee5"
             },
             "vertices": [
               {
@@ -1598,14 +1624,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "3ca6269b-a577-4f07-93fc-0eb598b8af2e",
+            "id": "7ffef76a-1510-4cfd-a1b0-48c94b689266",
             "source": {
-              "cell": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
-              "port": "6417752f-eb13-46f0-a9e3-d561c78b0f10"
+              "cell": "12cfdb2c-ac8e-4338-a7ac-f3139af0f0d8",
+              "port": "4670347e-2763-46f8-bc08-73625fd96ee5"
             },
             "target": {
-              "cell": "771b8bff-153c-41b7-98f1-c3b69abeeaff",
-              "port": "3186472b-c9ff-46ff-8f64-48c54b7afe89"
+              "cell": "39fd86ea-edd3-4d8c-904f-735f714a6d5c",
+              "port": "75245f60-a2e1-459d-997e-f761d5d54e5b"
             },
             "vertices": [
               {
@@ -1688,14 +1714,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "a0fc45dd-8d48-40b1-978e-307f6872a054",
+            "id": "f5a98759-65f7-4ca6-bc74-00a415e3a24c",
             "source": {
-              "cell": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
-              "port": "c13b7668-eef0-4087-b8b7-3a8504ecf7cf"
+              "cell": "12cfdb2c-ac8e-4338-a7ac-f3139af0f0d8",
+              "port": "d773c4c6-3dd2-4761-abe3-d4a309811804"
             },
             "target": {
-              "cell": "13650144-480e-42de-91ca-a435a68fdb09",
-              "port": "c16bb81f-672e-4c6f-ac55-0891f83e6503"
+              "cell": "a29a236e-82ff-4e67-9e6d-183d89e2be04",
+              "port": "33788148-bca3-42c3-92e7-4b496de33d75"
             },
             "vertices": [
               {
@@ -1778,14 +1804,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "ce442720-51a2-456a-86dd-8557b176a5cd",
+            "id": "03427440-89a0-42da-bf2b-e1de869b0c37",
             "source": {
-              "cell": "13650144-480e-42de-91ca-a435a68fdb09",
-              "port": "c16bb81f-672e-4c6f-ac55-0891f83e6503"
+              "cell": "a29a236e-82ff-4e67-9e6d-183d89e2be04",
+              "port": "33788148-bca3-42c3-92e7-4b496de33d75"
             },
             "target": {
-              "cell": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
-              "port": "fc65ec5e-a0f7-45b3-a33a-2b2b7f58e7d7"
+              "cell": "12cfdb2c-ac8e-4338-a7ac-f3139af0f0d8",
+              "port": "e56687e1-3e2e-45e0-ba41-6f73ac05b4be"
             },
             "vertices": [
               {
@@ -1863,7 +1889,7 @@
               "protocol": "HTTP/HTTPS",
               "threats": [
                 {
-                  "id": "2d4f0506-a43e-45f4-8742-c4b6513baef5",
+                  "id": "22bcb271-c378-4c91-b940-f3a47a0d2ced",
                   "title": "Manipulasi Parameter Identitas Sesi dan Token QR Saat Transit",
                   "status": "Open",
                   "severity": "Medium",
@@ -1882,14 +1908,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "2fe0cb40-04fb-4d7b-8700-ae7da31dbe06",
+            "id": "f5bae2d7-f747-4783-8558-63181a2bf233",
             "source": {
-              "cell": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
-              "port": "fc65ec5e-a0f7-45b3-a33a-2b2b7f58e7d7"
+              "cell": "12cfdb2c-ac8e-4338-a7ac-f3139af0f0d8",
+              "port": "e56687e1-3e2e-45e0-ba41-6f73ac05b4be"
             },
             "target": {
-              "cell": "c136f22f-a537-4a6e-b547-6c1299ccf94e",
-              "port": "096e73ca-3818-4711-b6d0-3a38540b90c6"
+              "cell": "f029acec-eada-4a13-af9a-d01c38fc1ac4",
+              "port": "9047bc94-619a-4f69-948f-760cc54962c2"
             },
             "vertices": [
               {
@@ -1967,7 +1993,7 @@
               "protocol": "HTTP/HTTPS",
               "threats": [
                 {
-                  "id": "23d9d1fd-f0f1-490b-a5b9-2ec168d93f5f",
+                  "id": "96678ea5-01d1-4b1c-85ee-b071f113c550",
                   "title": "Penyadapan Data Rekap Kehadiran dan Identitas Mahasiswa pada Jaringan Publik",
                   "status": "Open",
                   "severity": "High",
@@ -1986,14 +2012,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "b1532c68-3a85-4a9e-a4f6-4bd8f331e179",
+            "id": "83f192dc-4ef6-47e8-ba5f-849358c46c1f",
             "source": {
-              "cell": "c136f22f-a537-4a6e-b547-6c1299ccf94e",
-              "port": "096e73ca-3818-4711-b6d0-3a38540b90c6"
+              "cell": "f029acec-eada-4a13-af9a-d01c38fc1ac4",
+              "port": "9047bc94-619a-4f69-948f-760cc54962c2"
             },
             "target": {
-              "cell": "f7c9626e-53c6-4cb7-9cac-b5a4f1032323",
-              "port": "fc65ec5e-a0f7-45b3-a33a-2b2b7f58e7d7"
+              "cell": "12cfdb2c-ac8e-4338-a7ac-f3139af0f0d8",
+              "port": "e56687e1-3e2e-45e0-ba41-6f73ac05b4be"
             },
             "vertices": [
               {
@@ -2076,14 +2102,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "6fd29fe3-cf54-4bcf-898c-ab4a78efa412",
+            "id": "7a55318a-df12-4ba5-a1b3-1d8f97986a4d",
             "source": {
-              "cell": "c136f22f-a537-4a6e-b547-6c1299ccf94e",
-              "port": "f1a5bd6b-7695-4dcf-9ec7-9862576b99a6"
+              "cell": "f029acec-eada-4a13-af9a-d01c38fc1ac4",
+              "port": "9e62c4b0-bdb0-408c-a43c-b93960c3213d"
             },
             "target": {
-              "cell": "13650144-480e-42de-91ca-a435a68fdb09",
-              "port": "3dfcd853-1a12-4775-b225-1404f61efbb4"
+              "cell": "a29a236e-82ff-4e67-9e6d-183d89e2be04",
+              "port": "7820a0a8-76df-44e4-ad2f-35458ad91971"
             },
             "vertices": []
           },
@@ -2161,14 +2187,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "90d18aac-6c95-4077-80f2-06833332ca79",
+            "id": "54af74d9-2b50-4058-b405-9ce6c289a6ca",
             "source": {
-              "cell": "c136f22f-a537-4a6e-b547-6c1299ccf94e",
-              "port": "48283105-17c8-42fa-802f-7dfca902d23c"
+              "cell": "f029acec-eada-4a13-af9a-d01c38fc1ac4",
+              "port": "c7f3e86c-460b-4a51-91a8-d3589c6de06a"
             },
             "target": {
-              "cell": "ef88236b-23f4-446b-8e68-0c3eb018a0a6",
-              "port": "1ed252b0-b03a-4ac5-a0b1-eae5f160fbcc"
+              "cell": "5c7e874e-ac4a-4579-a409-c1789387d539",
+              "port": "7b465124-e4bb-462d-aabe-a15f851f5e82"
             },
             "vertices": [
               {
@@ -2251,14 +2277,14 @@
                 "denialOfService": 0
               }
             },
-            "id": "7bd231c5-5104-472e-98bd-c3a3fe725c62",
+            "id": "e08d545b-549b-4912-8b91-e2821e8e3f1a",
             "source": {
-              "cell": "ef88236b-23f4-446b-8e68-0c3eb018a0a6",
-              "port": "1ed252b0-b03a-4ac5-a0b1-eae5f160fbcc"
+              "cell": "5c7e874e-ac4a-4579-a409-c1789387d539",
+              "port": "7b465124-e4bb-462d-aabe-a15f851f5e82"
             },
             "target": {
-              "cell": "c136f22f-a537-4a6e-b547-6c1299ccf94e",
-              "port": "48283105-17c8-42fa-802f-7dfca902d23c"
+              "cell": "f029acec-eada-4a13-af9a-d01c38fc1ac4",
+              "port": "c7f3e86c-460b-4a51-91a8-d3589c6de06a"
             },
             "vertices": [
               {
@@ -2268,11 +2294,11 @@
             ]
           }
         ],
-        "description": "DFD level komponen utama (7 elemen: 3 Actor, 3 Process, 1 Data Store) dengan 3 zona batas kepercayaan (Perangkat Pengguna/Publik, Layanan Internal Kampus, dan Penyimpanan Data Akademik) serta 8 ancaman STRIDE yang mencakup seluruh kategori S, T, R, I, D, dan E."
+        "description": "DFD level komponen utama (7 elemen: 3 Actor, 3 Process, 1 Data Store) dengan 3 zona batas kepercayaan (Perangkat Pengguna/Publik, Layanan Internal Kampus, dan Penyimpanan Data Akademik) serta 10 ancaman STRIDE yang mencakup seluruh kategori S, T, R, I, D, dan E."
       }
     ],
     "diagramTop": 1,
     "reviewer": "Kharisma Monika Dian Pertiwi",
-    "threatTop": 8
+    "threatTop": 10
   }
 }

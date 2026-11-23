@@ -12,10 +12,10 @@ Repositori ini berisi model *threat modeling* berbasis **STRIDE** menggunakan **
 
 ## Struktur Repositori
 
-- `ThreatDragonModels/STRIDE - Kasus A - Kelompok 10/STRIDE - Kasus A - Kelompok 10.json` — File model OWASP Threat Dragon v2 (7 elemen DFD, 3 zona *trust boundary*, 13 *data flow*, dan 8 ancaman STRIDE).
+- `ThreatDragonModels/STRIDE - Kasus A - Kelompok 10/STRIDE - Kasus A - Kelompok 10.json` — File model OWASP Threat Dragon v2 (7 elemen DFD, 3 zona *trust boundary*, 13 *data flow*, dan 10 ancaman STRIDE).
 - `docs/Pembagian_Tugas_Kasus_A_Final.docx` — Dokumen pembagian tugas kelompok, panduan langkah pengerjaan, standar STRIDE, dan *checklist* QA.
 
-## Ringkasan 8 Ancaman STRIDE
+## Ringkasan 10 Ancaman STRIDE
 
 | No | Kategori | Elemen DFD | Judul Ancaman | Skor Risiko |
 | :-: | :--- | :--- | :--- | :---: |
@@ -27,6 +27,8 @@ Repositori ini berisi model *threat modeling* berbasis **STRIDE** menggunakan **
 | 6 | Information disclosure | `Database Akademik` (Store) | Pembacaan Tidak Sah Data Akademik dan Riwayat Kehadiran pada Database Akademik | 3 (Medium) |
 | 7 | Denial of service | `Backend Presensi` (Process) | Pembanjiran Permintaan Validasi Presensi pada Jendela Waktu Sesi 5 Menit | 6 (High) |
 | 8 | Elevation of privilege | `Backend Presensi` (Process) | Pengambilalihan Otorisasi Buka Sesi atau Rekap Seluruh Kelas (Broken Access Control) | 6 (High) |
+| 9 | Tampering | `Database Akademik` (Store) | Modifikasi Tidak Sah Catatan Kehadiran dan Status Sesi pada Database Akademik | 3 (Medium) |
+| 10 | Denial of service | `Layanan Autentikasi Kampus` (Process) | Gangguan Layanan Login Melalui Percobaan Masuk Massal (Brute-Force / Credential Stuffing) | 4 (Medium) |
 
 ## Cara Membuka & Mengedit di OWASP Threat Dragon
 
