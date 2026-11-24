@@ -33,12 +33,10 @@ Repositori ini berisi model *threat modeling* berbasis **STRIDE** menggunakan **
 ## Struktur Repositori
 
 - `ThreatDragonModels/STRIDE - Kasus A - Kelompok 10/STRIDE - Kasus A - Kelompok 10.json`File model OWASP Threat Dragon v2.6.2 (7 elemen DFD, 3 zona *trust boundary*, 13 *data flow*, dan 10 ancaman STRIDE).
-- `docs/Pembagian_Tugas.docx`
-  Dokumen kerja kelompok: identitas & ringkasan Kasus A, pembagian tugas detail 3 anggota
-  (S–T / R–I / D–E), panduan pengerjaan Tahap 0–5, referensi 7 elemen DFD & trust boundary,
-  contoh asumsi teknis, rubrik risiko (K×D skala 1–3), dan checklist QA 7 item sebelum pengumpulan.
+- `docs/Laporan_Threat_Modeling_Kasus_A_Kelompok_10.pdf`Laporan hasil ekspor fitur Report OWASP Threat Dragon: diagram DFD, properti elemen, dan detail 10 ancaman STRIDE (11 halaman).
+- `docs/Pembagian_Tugas.docx`Dokumen kerja kelompok: identitas & ringkasan Kasus A, pembagian tugas detail 3 anggota (S–T / R–I / D–E), panduan pengerjaan Tahap 0–5, referensi 7 elemen DFD & trust boundary, contoh asumsi teknis, rubrik risiko (K×D skala 1–3), dan checklist QA 7 item sebelum pengumpulan.
 - `README.md`
-- Dokumentasi utama repositori ini.
+  Dokumentasi utama repositori ini.
 
 ## Ringkasan 10 Ancaman STRIDE
 
@@ -54,7 +52,6 @@ Repositori ini berisi model *threat modeling* berbasis **STRIDE** menggunakan **
 | **8** | EoP             | `Backend Presensi` (Process)                | Pengambilalihan Otorisasi Buka Sesi atau Rekap Seluruh Kelas (Broken Access Control) |  **6** (High)  |
 | **9** | Tampering       | `Database Akademik` (Store)                 | Modifikasi Tidak Sah Catatan Kehadiran dan Status Sesi pada Database Akademik        | **3** (Medium) |
 | **10** | DoS             | `Layanan Autentikasi` (Process)             | Gangguan Layanan Login Melalui Percobaan Masuk Massal (Brute-Force)                  | **4** (Medium) |
-
 
 ## Cara Membuka & Mengedit di OWASP Threat Dragon
 
