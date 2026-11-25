@@ -3,7 +3,7 @@
   "summary": {
     "title": "STRIDE - Kasus A - Kelompok 10",
     "owner": "Muhammad Chaesar Pratama (103072400119)",
-    "description": "Studi Kasus A: Sistem Presensi Perkuliahan Berbasis QR Code (Keamanan Siber CAK3CAB3).\n\nAlur Bisnis Utama:\nDosen pengampu membuka sesi presensi untuk kelas yang diampunya melalui aplikasi web sehingga sistem menerbitkan kode QR yang ditampilkan di ruang kelas. Mahasiswa masuk menggunakan akun kampus lalu memindai kode QR, kemudian aplikasi mengirim identitas sesi dan informasi autentikasi ke Backend Presensi. Backend memvalidasi apakah sesi masih berada dalam masa berlaku lima menit, mahasiswa terdaftar di kelas tersebut, serta belum memiliki catatan hadir pada sesi yang sama sebelum menyimpannya ke Database Akademik. Dosen dapat memantau daftar hadir dan menutup sesi lebih awal, sementara admin akademik dapat melihat rekap kehadiran seluruh kelas melalui antarmuka web.\n\nAset Utama: Identitas pengguna, keanggotaan kelas, jadwal, sesi presensi, token/kode QR, dan catatan kehadiran.\nRuang Lingkup: Pembukaan/penutupan sesi, pemindaian QR, validasi kehadiran, dan pembacaan rekap.\nDi Luar Lingkup: Pendaftaran mata kuliah dan perubahan nilai.\n\nDaftar Asumsi Teknis:\n- Asumsi 1: Komunikasi antara Browser/Aplikasi Web dan layanan kampus berjalan melalui jaringan publik/kampus, sedangkan penggunaan enkripsi transport (TLS/HTTPS) serta pengamanan cookie/token belum dirinci.\n- Asumsi 2: Kode QR yang ditampilkan di ruang kelas bersifat statis selama jendela 5 menit dan tidak menyertakan verifikasi lokasi fisik ruang kelas.\n- Asumsi 3: Pencatatan audit log terstruktur untuk aksi pembukaan/penutupan sesi, validasi kehadiran, dan akses rekap belum dinyatakan tersedia.\n- Asumsi 4: Pembatasan laju permintaan (rate limiting) pada endpoint validasi presensi di Backend Presensi belum disebutkan dalam deskripsi sistem.",
+    "description": "Studi Kasus A: Sistem Presensi Perkuliahan Berbasis QR Code (Keamanan Siber CAK3CAB3).\n\nAlur Bisnis Utama:\nDosen pengampu membuka sesi presensi untuk kelas yang diampunya melalui aplikasi web sehingga sistem menerbitkan kode QR yang ditampilkan di ruang kelas. Mahasiswa masuk menggunakan akun kampus lalu memindai kode QR, kemudian aplikasi mengirim identitas sesi dan informasi autentikasi ke Backend Presensi. Backend memvalidasi apakah sesi masih berada dalam masa berlaku lima menit, mahasiswa terdaftar di kelas tersebut, serta belum memiliki catatan hadir pada sesi yang sama sebelum menyimpannya ke Database Akademik. Dosen dapat memantau daftar hadir dan menutup sesi lebih awal, sementara admin akademik dapat melihat rekap kehadiran seluruh kelas melalui antarmuka web.\n\nAset Utama: Identitas pengguna, keanggotaan kelas, jadwal, sesi presensi, token/kode QR, dan catatan kehadiran.\nRuang Lingkup: Pembukaan/penutupan sesi, pemindaian QR, validasi kehadiran, dan pembacaan rekap.\nDi Luar Lingkup: Pendaftaran mata kuliah dan perubahan nilai.\n\nDaftar Asumsi Teknis:\n- Asumsi 1: Komunikasi antara Browser/Aplikasi Web dan layanan kampus berjalan melalui jaringan publik/kampus, sedangkan penggunaan enkripsi transport (TLS/HTTPS) serta pengamanan cookie/token belum dirinci.\n- Asumsi 2: Kode QR yang ditampilkan di ruang kelas bersifat statis selama jendela 5 menit dan tidak menyertakan verifikasi lokasi fisik ruang kelas.\n- Asumsi 3: Pencatatan audit log terstruktur untuk aksi pembukaan/penutupan sesi, validasi kehadiran, akses rekap, serta perubahan data kehadiran langsung di tingkat database belum dinyatakan tersedia.\n- Asumsi 4: Pembatasan laju permintaan (rate limiting) pada endpoint validasi presensi di Backend Presensi maupun endpoint login di Layanan Autentikasi Kampus belum disebutkan dalam deskripsi sistem.\n- Asumsi 5: Penegakan otorisasi berbasis peran dan kepemilikan kelas di sisi server, isolasi jaringan menuju Database Akademik, prinsip least privilege akun database, serta enkripsi data saat disimpan (encryption at rest) belum dijelaskan secara teknis.",
     "id": 0
   },
   "detail": {
@@ -603,14 +603,28 @@
               "outOfScope": false,
               "reasonOutOfScope": "",
               "isTrustBoundary": false,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": true,
               "privilegeLevel": "",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "aa38a7e5-cbe3-4c24-badb-2701599b5528",
+                  "title": "Penyamaran Akun Dosen Pengampu Melalui Pembajakan Token Sesi",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "Jika pihak tidak berwenang dapat mencuri atau menggunakan ulang token autentikasi milik dosen pengampu yang tersimpan pada Browser / Aplikasi Web (misalnya sesi yang tertinggal di komputer kelas atau token yang tertangkap di jaringan publik), maka bisa terjadi pembukaan atau penutupan sesi presensi secara tidak sah atas nama dosen tersebut sehingga keabsahan sesi kelas terganggu.\n\nAsumsi terkait (Asumsi 1): Perlindungan enkripsi transport pada jaringan publik dan konfigurasi pengamanan token sesi (HttpOnly, Secure, SameSite) belum diuraikan pada deskripsi sistem.\n\nPenilaian Risiko: Kemungkinan = 2 (Sedang, masuk akal jika sesi tertinggal di komputer kelas atau tertangkap pada jaringan publik) x Dampak = 3 (Tinggi, akses tidak sah pada fungsi kendali sesi dosen) = Skor 6 (Tinggi).",
+                  "mitigation": "Wajibkan HTTPS/TLS untuk seluruh alur autentikasi, simpan token sesi pada cookie dengan atribut HttpOnly, Secure, dan SameSite=Strict, terapkan masa berlaku sesi pendek dengan idle timeout otomatis pada perangkat ruang kelas, serta aktifkan autentikasi multifaktor (MFA) untuk akun dosen dan admin. (Catatan: rekomendasi kontrol belum berarti telah diimplementasikan).",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": "6 (K:2 x D:3)"
+                }
+              ],
               "threatFrequency": {
-                "spoofing": 0,
+                "spoofing": 1,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
@@ -738,19 +752,6 @@
               "privilegeLevel": "",
               "threats": [
                 {
-                  "id": "aa38a7e5-cbe3-4c24-badb-2701599b5528",
-                  "title": "Penyamaran Akun Dosen Pengampu Melalui Pembajakan Token Sesi",
-                  "status": "Open",
-                  "severity": "High",
-                  "type": "Spoofing",
-                  "description": "Jika pihak tidak berwenang dapat mencuri atau menggunakan ulang token autentikasi milik dosen pengampu pada Layanan Autentikasi Kampus, maka bisa terjadi pembukaan atau penutupan sesi presensi secara tidak sah atas nama dosen tersebut sehingga keabsahan sesi kelas terganggu.\n\nAsumsi terkait (Asumsi 1): Perlindungan enkripsi transport pada jaringan publik dan konfigurasi pengamanan token sesi (HttpOnly, Secure, SameSite) belum diuraikan pada deskripsi sistem.\n\nPenilaian Risiko: Kemungkinan = 2 (Sedang, masuk akal jika sesi tertinggal di komputer kelas atau tertangkap pada jaringan publik) x Dampak = 3 (Tinggi, akses tidak sah pada fungsi kendali sesi dosen) = Skor 6 (Tinggi).",
-                  "mitigation": "Wajibkan HTTPS/TLS untuk seluruh alur autentikasi, simpan token sesi pada cookie dengan atribut HttpOnly, Secure, dan SameSite=Strict, terapkan masa berlaku sesi pendek dengan idle timeout otomatis pada perangkat ruang kelas, serta aktifkan autentikasi multifaktor (MFA) untuk akun dosen dan admin. (Catatan: rekomendasi kontrol belum berarti telah diimplementasikan).",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 2,
-                  "score": "6 (K:2 x D:3)"
-                },
-                {
                   "id": "b8948df3-e602-4b3c-9945-3ae321e4157d",
                   "title": "Gangguan Layanan Login Melalui Percobaan Masuk Massal (Brute-Force / Credential Stuffing)",
                   "status": "Open",
@@ -765,7 +766,7 @@
                 }
               ],
               "threatFrequency": {
-                "spoofing": 1,
+                "spoofing": 0,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
@@ -924,8 +925,8 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Elevation of privilege",
-                  "description": "Jika mahasiswa atau dosen yang bukan pengampu kelas dapat memanipulasi parameter ID kelas atau mengakses langsung endpoint administrasi pada Backend Presensi, maka bisa terjadi pembukaan atau penutupan sesi kelas orang lain serta pembacaan rekap seluruh kelas yang hanya menjadi hak Admin Akademik.\n\nAsumsi terkait: Aturan bisnis kepemilikan kelas dan pembagian peran telah disebutkan, namun mekanisme penegakan otorisasi berbasis peran dan kepemilikan objek di sisi server belum dijelaskan secara teknis.\n\nPenilaian Risiko: Kemungkinan = 2 (Sedang, sering terjadi jika validasi peran hanya dibatasi pada menu antarmuka browser tanpa pengecekan ulang di API) x Dampak = 3 (Tinggi, pelanggaran serius aturan bisnis dan akses tidak sah lintas kelas) = Skor 6 (Tinggi).",
-                  "mitigation": "Validasi otorisasi secara ketat di sisi server (Backend Presensi) pada setiap request: cocokkan peran pengguna (RBAC) dan pastikan ID dosen sesuai dengan pengampu kelas pada Database Akademik sebelum membuka/menutup sesi, batasi endpoint rekap seluruh kelas hanya untuk peran Admin Akademik, serta terapkan constraint unik (session_id, mahasiswa_id) untuk menjamin maksimal satu catatan hadir per sesi. (Catatan: rekomendasi kontrol belum berarti telah diimplementasikan).",
+                  "description": "Jika mahasiswa atau dosen yang bukan pengampu kelas dapat memanipulasi parameter ID kelas atau mengakses langsung endpoint administrasi pada Backend Presensi, maka bisa terjadi pembukaan atau penutupan sesi kelas orang lain serta pembacaan rekap seluruh kelas yang hanya menjadi hak Admin Akademik.\n\nAsumsi terkait (Asumsi 5): Aturan bisnis kepemilikan kelas dan pembagian peran telah disebutkan, namun penegakan otorisasi berbasis peran dan kepemilikan objek (kecocokan ID dosen dengan pengampu kelas) di sisi server belum dijelaskan secara teknis.\n\nPenilaian Risiko: Kemungkinan = 2 (Sedang, sering terjadi jika validasi peran hanya dibatasi pada menu antarmuka browser tanpa pengecekan ulang di API) x Dampak = 3 (Tinggi, pelanggaran serius aturan bisnis dan akses tidak sah lintas kelas) = Skor 6 (Tinggi).",
+                  "mitigation": "Validasi otorisasi secara ketat di sisi server (Backend Presensi) pada setiap request: cocokkan peran pengguna (RBAC) dan pastikan ID dosen sesuai dengan pengampu kelas pada Database Akademik sebelum membuka/menutup sesi, batasi endpoint rekap seluruh kelas hanya untuk peran Admin Akademik, serta tolak setiap ID kelas yang tidak sesuai kepemilikan pengguna dengan respons 403 dan catat percobaan pelanggaran tersebut pada audit log. (Catatan: rekomendasi kontrol belum berarti telah diimplementasikan).",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 8,
@@ -1069,14 +1070,14 @@
                   "id": "f56c0cb0-fd52-44a3-ad95-3cd87443e0f1",
                   "title": "Pembacaan Tidak Sah Data Akademik dan Riwayat Kehadiran pada Database Akademik",
                   "status": "Open",
-                  "severity": "Medium",
+                  "severity": "High",
                   "type": "Information disclosure",
-                  "description": "Jika penyerang yang memperoleh akses ke jaringan internal atau memanfaatkan celah injeksi query dapat membaca tabel secara langsung pada Database Akademik, maka bisa terjadi kebocoran massal identitas pengguna, keanggotaan kelas, jadwal, token sesi, dan seluruh catatan kehadiran.\n\nAsumsi terkait: Isolasi jaringan menuju Database Akademik, prinsip least privilege akun database, serta enkripsi data saat disimpan (encryption at rest) belum diuraikan dalam spesifikasi kasus.\n\nPenilaian Risiko: Kemungkinan = 1 (Rendah, memerlukan akses jaringan internal atau celah tambahan) x Dampak = 3 (Tinggi, kebocoran besar seluruh data akademik dan kehadiran) = Skor 3 (Sedang).",
+                  "description": "Jika penyerang yang memperoleh akses ke jaringan internal atau memanfaatkan celah injeksi query dapat membaca tabel secara langsung pada Database Akademik, maka bisa terjadi kebocoran massal identitas pengguna, keanggotaan kelas, jadwal, token sesi, dan seluruh catatan kehadiran.\n\nAsumsi terkait (Asumsi 5): Isolasi jaringan menuju Database Akademik, prinsip least privilege akun database, serta enkripsi data saat disimpan (encryption at rest) belum diuraikan dalam spesifikasi kasus.\n\nPenilaian Risiko: Kemungkinan = 2 (Sedang, celah injeksi query pada endpoint Backend Presensi yang menerima input pengguna masuk akal terjadi bila query tidak diparameterisasi, selain jalur akses jaringan internal) x Dampak = 3 (Tinggi, kebocoran besar seluruh data akademik dan kehadiran) = Skor 6 (Tinggi).",
                   "mitigation": "Gunakan parameterized query/ORM pada Backend Presensi untuk mencegah SQL Injection, batasi akses jaringan ke Database Akademik khusus dari host Backend Presensi dengan akun berhak akses minimum, serta aktifkan enkripsi data-at-rest pada basis data dan file cadangannya. (Catatan: rekomendasi kontrol belum berarti telah diimplementasikan).",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 6,
-                  "score": "3 (K:1 x D:3)"
+                  "score": "6 (K:2 x D:3)"
                 },
                 {
                   "id": "aff521ad-5e0a-49af-86e5-25d5457e9803",
@@ -1084,8 +1085,8 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Tampering",
-                  "description": "Jika pihak tidak berwenang yang berhasil mengakses jaringan internal atau menyalahgunakan akun basis data dapat mengubah atau menghapus catatan kehadiran secara langsung pada Database Akademik, maka bisa terjadi pemalsuan riwayat presensi mahasiswa serta hilangnya keabsahan rekap perkuliahan tanpa melalui proses validasi Backend Presensi.\n\nAsumsi terkait (Asumsi 3): Pembatasan hak tulis akun basis data (least privilege), kontrol integritas catatan kehadiran, serta audit log perubahan langsung pada tingkat database belum dinyatakan tersedia.\n\nPenilaian Risiko: Kemungkinan = 1 (Rendah, memerlukan akses jaringan internal atau kompromi akun database) x Dampak = 3 (Tinggi, merusak integritas seluruh data kehadiran akademik) = Skor 3 (Sedang).",
-                  "mitigation": "Terapkan akun basis data terpisah berprinsip least privilege (hanya izin INSERT/SELECT terbatas bagi layanan presensi tanpa izin UPDATE/DELETE bebas pada tabel riwayat kehadiran), aktifkan audit log tingkat database untuk setiap perubahan data, serta lakukan pencadangan berkala yang terlindungi integritasnya. (Catatan: rekomendasi kontrol belum berarti telah diimplementasikan).",
+                  "description": "Jika pihak tidak berwenang yang berhasil mengakses jaringan internal atau menyalahgunakan akun basis data dapat mengubah atau menghapus catatan kehadiran secara langsung pada Database Akademik, maka bisa terjadi pemalsuan riwayat presensi mahasiswa serta hilangnya keabsahan rekap perkuliahan tanpa melalui proses validasi Backend Presensi.\n\nAsumsi terkait (Asumsi 3 dan Asumsi 5): Pembatasan hak tulis akun basis data (least privilege) dan isolasi jaringan menuju database belum dinyatakan (Asumsi 5), demikian pula kontrol integritas catatan kehadiran dan audit log perubahan langsung pada tingkat database (Asumsi 3).\n\nPenilaian Risiko: Kemungkinan = 1 (Rendah, memerlukan akses jaringan internal atau kompromi akun database) x Dampak = 3 (Tinggi, merusak integritas seluruh data kehadiran akademik) = Skor 3 (Sedang).",
+                  "mitigation": "Terapkan akun basis data terpisah berprinsip least privilege (hanya izin INSERT/SELECT terbatas bagi layanan presensi tanpa izin UPDATE/DELETE bebas pada tabel riwayat kehadiran), terapkan constraint unik (session_id, mahasiswa_id) pada tabel kehadiran untuk menjamin maksimal satu catatan hadir per sesi, aktifkan audit log tingkat database untuk setiap perubahan data, serta lakukan pencadangan berkala yang terlindungi integritasnya. (Catatan: rekomendasi kontrol belum berarti telah diimplementasikan).",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 9,
@@ -1702,15 +1703,29 @@
               "outOfScope": false,
               "reasonOutOfScope": "",
               "isTrustBoundary": false,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": true,
-              "protocol": "HTTP/HTTPS",
-              "threats": [],
+              "protocol": "HTTP/HTTPS (TLS belum dinyatakan - Asumsi 1)",
+              "threats": [
+                {
+                  "id": "84de5076-7eda-4696-b527-11643124754d",
+                  "title": "Penyadapan Kredensial Akun Kampus pada Alur Login di Jaringan Publik",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Jika pihak tidak berwenang pada jaringan Wi-Fi kampus atau jaringan publik dapat menyadap aliran data 'Kredensial akun kampus' dari Browser / Aplikasi Web ke Layanan Autentikasi Kampus, maka bisa terjadi pencurian nama pengguna dan kata sandi mahasiswa, dosen, atau admin sehingga akun tersebut dapat dipakai untuk presensi atau kendali sesi atas nama orang lain.\n\nAsumsi terkait (Asumsi 1): Penggunaan enkripsi transport (TLS/HTTPS) pada alur login serta pengamanan cookie/token belum dirinci pada deskripsi sistem.\n\nPenilaian Risiko: Kemungkinan = 2 (Sedang, penyadapan pada Wi-Fi terbuka masuk akal terjadi jika login tanpa enkripsi transport) x Dampak = 3 (Tinggi, pengambilalihan akun akademik termasuk akun dosen dan admin) = Skor 6 (Tinggi).",
+                  "mitigation": "Wajibkan HTTPS/TLS 1.2/1.3 dengan header HSTS pada halaman dan endpoint login, alihkan (redirect) semua akses HTTP ke HTTPS, kirim kredensial hanya melalui body POST (bukan query string), terapkan Cache-Control: no-store pada respons login, pastikan kredensial tidak tercatat pada log server, serta aktifkan autentikasi multifaktor (MFA) untuk akun dosen dan admin. (Catatan: rekomendasi kontrol belum berarti telah diimplementasikan).",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": "6 (K:2 x D:3)"
+                }
+              ],
               "threatFrequency": {
                 "tampering": 0,
-                "informationDisclosure": 0,
+                "informationDisclosure": 1,
                 "denialOfService": 0
               }
             },
@@ -1796,7 +1811,7 @@
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": true,
-              "protocol": "HTTP/HTTPS",
+              "protocol": "HTTP/HTTPS (TLS belum dinyatakan - Asumsi 1)",
               "threats": [],
               "threatFrequency": {
                 "tampering": 0,
@@ -1886,7 +1901,7 @@
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": true,
-              "protocol": "HTTP/HTTPS",
+              "protocol": "HTTP/HTTPS (TLS belum dinyatakan - Asumsi 1)",
               "threats": [
                 {
                   "id": "22bcb271-c378-4c91-b940-f3a47a0d2ced",
@@ -1990,7 +2005,7 @@
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": true,
-              "protocol": "HTTP/HTTPS",
+              "protocol": "HTTP/HTTPS (TLS belum dinyatakan - Asumsi 1)",
               "threats": [
                 {
                   "id": "96678ea5-01d1-4b1c-85ee-b071f113c550",
@@ -2092,7 +2107,7 @@
               "isTrustBoundary": false,
               "hasOpenThreats": false,
               "isBidirectional": true,
-              "isEncrypted": false,
+              "isEncrypted": true,
               "isPublicNetwork": false,
               "protocol": "Internal API / HTTPS",
               "threats": [],
@@ -2177,7 +2192,7 @@
               "isTrustBoundary": false,
               "hasOpenThreats": false,
               "isBidirectional": false,
-              "isEncrypted": false,
+              "isEncrypted": true,
               "isPublicNetwork": false,
               "protocol": "SQL / TLS",
               "threats": [],
@@ -2267,7 +2282,7 @@
               "isTrustBoundary": false,
               "hasOpenThreats": false,
               "isBidirectional": false,
-              "isEncrypted": false,
+              "isEncrypted": true,
               "isPublicNetwork": false,
               "protocol": "SQL / TLS",
               "threats": [],
@@ -2294,11 +2309,11 @@
             ]
           }
         ],
-        "description": "DFD level komponen utama (7 elemen: 3 Actor, 3 Process, 1 Data Store) dengan 3 zona batas kepercayaan (Perangkat Pengguna/Publik, Layanan Internal Kampus, dan Penyimpanan Data Akademik) serta 10 ancaman STRIDE yang mencakup seluruh kategori S, T, R, I, D, dan E."
+        "description": "DFD level komponen utama (7 elemen: 3 Actor, 3 Process, 1 Data Store) dengan 3 zona batas kepercayaan (Perangkat Pengguna/Publik, Layanan Internal Kampus, dan Penyimpanan Data Akademik) serta 11 ancaman STRIDE yang mencakup seluruh kategori S, T, R, I, D, dan E."
       }
     ],
     "diagramTop": 1,
     "reviewer": "Kharisma Monika Dian Pertiwi",
-    "threatTop": 10
+    "threatTop": 11
   }
 }
